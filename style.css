@@ -1,3 +1,46 @@
 :root{
     background: #9c88ff;
+    --navbar-width: 256px;
+    --navbar-width-min: 80px;
+    --navbar-dark-primary: #18283b;
+    --navbar-light-primary: #2c23e50;
+    --navbar-light-primary: #f5f6fa;
+    --navbar-light-secondary: #8392a5;
+}
+
+html, body{
+    margin: 0;
+    background: var(--background);
+}
+
+#nav-toggle:checked #nav-header{
+    width: calc(--navbar-width-min) - 16px;
+}
+
+#nav-content #nav-footer{
+    width: var(--navbar-width-min);
+}
+
+#nav-header #nav-title{
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .1s;
+    label[for="nav-toggle"];
+    left: calc(50% - 8px);
+    transform: translate(-50%);
+}
+
+#nav-toggle-burger{
+    background: var(--navbar-light-primary);
+}
+
+:before, ::after{
+    width: 16px;
+    background: var(--navbar-light-secondary);
+    transform: translate(0,0) rotate(0deg);
+}
+
+#nav-content .nav-button span{
+    opacity: 0;
+    transition: opacity .1s;
 }
