@@ -44,3 +44,19 @@ html, body{
     opacity: 0;
     transition: opacity .1s;
 }
+
+.fas{
+    min-width: calcl(100% - 16px);
+}
+
+#nav-footer #nav-footer-avater{
+    margin-left: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#nav-footer-titlebox, label[for="nav-footer-toggle"]{
+    opacity: 0;
+    transition: opacity .1s;
+    pointer-events: none;
+}
