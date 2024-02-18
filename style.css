@@ -62,5 +62,26 @@ html, body{
 }
 
 #nav-bar{
-    
+    position: absolute;
+    left: 1w;
+    top: 1w;
+    height: calc(100% - 2w);
+    background: var(--navbar-dark-primary);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    color: var(--navbar-light-prinary);
+    font-family: verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+    user-select: none;
 }
+
+hr{
+   margin: 0;
+   position: relative;
+   left: 16px;
+   width: calc(100% - 32px);
+   border: none;
+   border-top: solid 1px var(--navbar-dark-secondary); 
+}
+
