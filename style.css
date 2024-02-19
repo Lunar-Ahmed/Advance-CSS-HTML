@@ -1,9 +1,9 @@
 :root{
-    background: #9c88ff;
+    --background: #9c88ff;
     --navbar-width: 256px;
     --navbar-width-min: 80px;
     --navbar-dark-primary: #18283b;
-    --navbar-light-primary: #2c23e50;
+    --navbar-dark-secondary: #2c23e50;
     --navbar-light-primary: #f5f6fa;
     --navbar-light-secondary: #8392a5;
 }
@@ -14,7 +14,7 @@ html, body{
 }
 
 #nav-toggle:checked #nav-header{
-    width: calc(--navbar-width-min) - 16px;
+    width: calc(var(--navbar-width-min) - 16px);
 }
 
 #nav-content #nav-footer{
@@ -67,12 +67,12 @@ transform: translate(-50%);
     position: absolute;
     left: 1w;
     top: 1w;
-    height: calc(100% - 2w);
+    height: calc(100% - 2vw);
     background: var(--navbar-dark-primary);
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    color: var(--navbar-light-prinary);
+    color: var(--navbar-light-primary);
     font-family: verdana, Geneva, Tahoma, sans-serif;
     overflow: hidden;
     user-select: none;
@@ -98,7 +98,7 @@ input[type="checkbox"]{
 
 #nav-header{
     position: relative;
-    width: calc(--navbar-width);
+    width: var(--navbar-width);
     left: 16px;
     width: calc(--navbar-width) - 16px;
     min-height: 80px;
@@ -107,6 +107,7 @@ input[type="checkbox"]{
     z-index: 2;
     display: flex;
     align-items: center;
+    transition: .2s;
 }
 
 hr{
@@ -136,7 +137,7 @@ label[for="nav-toggle"]{
     height: 2px;
     background: var(--navbar-dark-primary);
     border-radius: 99px;
-    transition: background .3s;
+    transition: background .2s;
 }
 
 :before, :after{
@@ -147,7 +148,7 @@ label[for="nav-toggle"]{
     height: 2px;
     background: var(--navbar-light-primary);
     border-radius: 99px;
-    transform: translate(2px,8px) rotate(-33deg);
+    transform: translate(2px,8px) rotate(30deg);
     transition: .2s;
 }
 
@@ -162,10 +163,10 @@ label[for="nav-toggle"]{
     position: relative;
     flex: 1;
     width: var(--navbar-width);
-    background: var(--navbar-width);
+    background: var(--navbar-dark-primary);
     box-shadow: 0 0 0 16px var(--navbar-dark-primary);
     direction: rtl;
-    overflow: hidden;
+    overflow-x: hidden;
     transition: width .2s;
 }
 
@@ -228,7 +229,7 @@ span{
     transition: opacity 1s;
 }
 
-fas{
+.fas{
     transition: min-widht .2s;
 }
 @for $i from 1 through 8:nth-of-type(#{$i}):hover{
@@ -254,7 +255,6 @@ fas{
     flex-direction: column;
     z-index: 2;
     transition: widht .2s height .2s;
-    transition: width .2s, height .2s;
 }
 
 #nav-footer-heading{
@@ -316,9 +316,9 @@ label[for="nav-footer-toggle"]{
 }
 
 #nav-footer-content{
-    margin: 0 16px 16px;
+    margin: 0 16px 16px 16px;
     border-top: solid 1px var(--navbar-light-secondary);
-    padding: 16px;
+    padding: 16px 0;
     color: var(--navbar-light-secondary);
     font-size: .8rem;
     overflow: auto;
