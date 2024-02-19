@@ -48,7 +48,7 @@ transform: translate(-50%);
 }
 
 .fas{
-    min-width: calcl(100% - 16px);
+    min-width: calc(100% - 16px);
 }
 
 #nav-footer #nav-footer-avater{
@@ -65,15 +65,15 @@ transform: translate(-50%);
 
 #nav-bar{
     position: absolute;
-    left: 1w;
-    top: 1w;
+    left: 1vw;
+    top: 1vw;
     height: calc(100% - 2vw);
     background: var(--navbar-dark-primary);
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     color: var(--navbar-light-primary);
-    font-family: verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow: hidden;
     user-select: none;
 }
@@ -100,7 +100,7 @@ input[type="checkbox"]{
     position: relative;
     width: var(--navbar-width);
     left: 16px;
-    width: calc(--navbar-width) - 16px;
+    width: calc(var(--navbar-width) - 16px);
     min-height: 80px;
     background: var(--navbar-dark-primary);
     border-radius: 16px;
@@ -175,12 +175,12 @@ label[for="nav-toggle"]{
     height: 8px;
 }
 
-::webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb{
     border-radius: 99px;
     background-color: #D62929;
 }
 
-::webkit-scrollbar-button{
+::-webkit-scrollbar-button{
     height: 16px;
 }
 
@@ -196,11 +196,11 @@ label[for="nav-toggle"]{
     transition: top .2s;
 }
 
-:before ::after{
+:before, ::after{
     content: '';
     position: absolute;
     right: 0;
-    bottom: 100px;
+    bottom: 100%;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -230,7 +230,7 @@ span{
 }
 
 .fas{
-    transition: min-widht .2s;
+    transition: min-width .2s;
 }
 @for $i from 1 through 8:nth-of-type(#{$i}):hover{
     color: var(--navbar-dark-primary);
