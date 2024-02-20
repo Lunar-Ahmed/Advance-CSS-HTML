@@ -13,15 +13,17 @@ html, body{
     background: var(--background);
 }
 
-#nav-toggle:checked #nav-header{
+#nav-toggle:checked 
+& ~ #nav-header{
     width: calc(var(--navbar-width-min) - 16px);
 }
 
-#nav-content #nav-footer{
+& ~ #nav-content,  & ~#nav-footer{
     width: var(--navbar-width-min);
 }
 
-#nav-header #nav-title{
+& ~ #nav-header 
+#nav-title{
     opacity: 0;
     pointer-events: none;
     transition: opacity .1s;
@@ -42,7 +44,9 @@ transform: translate(-50%);
     transform: translate(0,0) rotate(0deg);
 }
 
-#nav-content .nav-button span{
+& ~#nav-content 
+.nav-button 
+span{
     opacity: 0;
     transition: opacity .1s;
 }
@@ -51,7 +55,8 @@ transform: translate(-50%);
     min-width: calc(100% - 16px);
 }
 
-#nav-footer #nav-footer-avater{
+& ~ #nav-footer 
+#nav-footer-avater{
     margin-left: 0;
     left: 50%;
     transform: translate(-50%);
@@ -140,7 +145,7 @@ label[for="nav-toggle"]{
     transition: background .2s;
 }
 
-:before, :after{
+&:before, &:after{
     content: '';
     position: absolute;
     top: -6px;
@@ -152,7 +157,7 @@ label[for="nav-toggle"]{
     transition: .2s;
 }
 
-:after{
+&:after{
     top: 6px;
     transform: translate(2px, -8px) rotate(-33deg);
 }
@@ -170,17 +175,17 @@ label[for="nav-toggle"]{
     transition: width .2s;
 }
 
-::-webkit-scrollbar{
+&::-webkit-scrollbar{
     width: 8px;
     height: 8px;
 }
 
-::-webkit-scrollbar-thumb{
+&::-webkit-scrollbar-thumb{
     border-radius: 99px;
     background-color: #D62929;
 }
 
-::-webkit-scrollbar-button{
+&::-webkit-scrollbar-button{
     height: 16px;
 }
 
@@ -196,7 +201,7 @@ label[for="nav-toggle"]{
     transition: top .2s;
 }
 
-:before, ::after{
+&:before, &:after{
     content: '';
     position: absolute;
     right: 0;
@@ -207,7 +212,7 @@ label[for="nav-toggle"]{
     box-shadow: 16px 16px var(--background);
 }
 
-:after{
+&:after{
     top: 100%;
     box-shadow: 16px 16px var(--background);
 }
@@ -232,11 +237,12 @@ span{
 .fas{
     transition: min-width .2s;
 }
-@for $i from 1 through 8:nth-of-type(#{$i}):hover{
+@for $i from 1 through 8
+&:nth-of-type(#{$i}):hover{
     color: var(--navbar-dark-primary);
 }
 
-#nav-content-highlight{
+& ~ #nav-content-highlight{
     top: ($1 - 1) * 54 + 16px;
 }
 
@@ -254,7 +260,7 @@ span{
     display: flex;
     flex-direction: column;
     z-index: 2;
-    transition: widht .2s height .2s;
+    transition: width .2s height .2s;
 }
 
 #nav-footer-heading{
@@ -324,12 +330,12 @@ label[for="nav-footer-toggle"]{
     overflow: auto;
 }
 
-::-webkit-scrollbar{
+&::-webkit-scrollbar{
     width: 8px;
     height: 8px;
 }
 
-::webkit-scrollbar-thumb{
+&::-webkit-scrollbar-thumb{
     border-radius: 99px;
     background-color: #D62929;
 }
